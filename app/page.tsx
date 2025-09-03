@@ -7,47 +7,70 @@ export default function Home() {
       <SmoothScroll />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-50 to-amber-100">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2020&q=80')] bg-cover bg-center opacity-20"></div>
-        </div>
-        
-        {/* Logo */}
-        <div className="absolute top-4 md:top-8 left-4 md:left-8 z-10">
-          <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-            <div className="w-5 h-5 md:w-6 md:h-6 bg-amber-400 rounded-full"></div>
-          </div>
-        </div>
+      <section className="relative min-h-screen bg-gray-100 p-4 md:p-8">
+        {/* Main Container with Rounded Frame and Blue Border */}
+        <div className="max-w-7xl mx-auto bg-white rounded-3xl overflow-hidden shadow-xl">
+          
+          {/* Hero Section - Split Layout */}
+          <div className="relative min-h-screen">
+            
+            {/* Full Width Image Section */}
+            <div className="relative w-full h-screen">
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <Image
+                  src="/images/home_bg.jpg"
+                  alt="Wellness background"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              
+              {/* Event Details Overlay - Top Left */}
+              <div className="absolute top-6 left-6 z-10">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 max-w-xs">
+                  {/* Logo */}
+                  <div className="w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center mb-3">
+                    <div className="w-4 h-4 bg-white rounded-full"></div>
+                  </div>
+                  
+                  {/* Event Details */}
+                  <div className="space-y-1 text-sm md:text-base">
+                    <p className="text-gray-800 font-medium">An Inara Wellness Day</p>
+                    <p className="text-gray-700">Experience - October 4, 2025 -</p>
+                    <p className="text-gray-700">Minneapolis, MN</p>
+                  </div>
+                </div>
+              </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center px-4 md:px-6 max-w-4xl mx-auto">
-          <div className="mb-4 md:mb-6">
-            <p className="text-gray-700 text-base md:text-lg mb-1 md:mb-2">An Inara Wellness Day</p>
-            <p className="text-gray-700 text-base md:text-lg mb-1 md:mb-2">Experience - October 9, 2029 -</p>
-            <p className="text-gray-700 text-base md:text-lg mb-6 md:mb-8">Minneapolis, MN</p>
-          </div>
-          
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif text-gray-800 mb-6 md:mb-8 leading-tight">
-            The Return to Self
-          </h1>
-          
-          <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-colors duration-300 mb-6 md:mb-8 hover:shadow-lg hover-lift">
-            Reserve your spot +
-          </button>
-          
-          {/* Navigation Dots */}
-          <div className="flex justify-center space-x-2 mb-6 md:mb-8">
-            <div className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"></div>
-            <div className="w-2 h-2 md:w-3 md:h-3 bg-white/50 rounded-full"></div>
-          </div>
-        </div>
+              {/* "The Return to Self" Text at Bottom Left Corner */}
+              <div className="absolute -bottom-8 -left-8 z-10">
+                <div className="bg-white w-[600px] h-[300px] p-8  rounded-lg shadow-lg text-center">
+                  <h1 className="text-lg md:text-xl font-serif text-gray-800 font-semibold">
+                    The Return to Self
+                  </h1>
+                </div>
+              </div>
 
-        {/* Scroll Button */}
-        <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8">
-          <button className="bg-amber-800 hover:bg-amber-900 text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium transition-colors duration-300 hover:shadow-lg">
-            Scroll for more
-          </button>
+              {/* Pagination Dots - Bottom Center */}
+              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                  <div className="w-3 h-3 bg-amber-400 rounded-full"></div>
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Scroll Button - Bottom Right */}
+              <div className="absolute bottom-6 right-6 z-10">
+                <button className="bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 hover:shadow-lg">
+                  Scroll for more
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
